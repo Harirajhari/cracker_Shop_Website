@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: #E8450A;
+    color: #FFFFFF;
+  }
+}
+
+@layer components {
+
+  .btn-primary {
+    @apply font-body font-semibold px-6 py-3 rounded-sm
+           transition-all duration-300 hover:scale-105 active:scale-95
+           relative overflow-hidden text-white;
+    background: linear-gradient(135deg, #E8450A 0%, #F5A623 100%);
+    box-shadow: 0 4px 16px rgba(232,69,10,0.25);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 6px 24px rgba(232,69,10,0.35);
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary font-body font-semibold px-6 py-3 rounded-sm
+           transition-all duration-300 hover:bg-primary hover:text-white active:scale-95;
+  }
+
+  .btn-gold {
+    @apply font-body font-semibold px-6 py-3 rounded-sm
+           transition-all duration-300 hover:scale-105 active:scale-95 text-white;
+    background: linear-gradient(135deg, #C9A84C 0%, #E2C46A 50%, #A07C2A 100%);
+    box-shadow: 0 4px 16px rgba(201,168,76,0.25);
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-gold text-gold-dark font-body font-semibold px-6 py-3 rounded-sm
+           transition-all duration-300 hover:bg-gold hover:text-white active:scale-95;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl text-ink tracking-wide;
+  }
+  .section-subtitle {
+    @apply font-body text-xs text-primary uppercase tracking-[0.3em] font-semibold;
+  }
+
+  .primary-divider {
+    @apply w-12 h-1 mx-auto my-4 rounded-full;
+    background: linear-gradient(135deg, #E8450A, #F5A623);
+  }
+  .gold-divider {
+    @apply w-12 h-1 mx-auto my-4 rounded-full;
+    background: linear-gradient(135deg, #C9A84C, #E2C46A, #A07C2A);
+  }
+
+  .card-product {
+    @apply bg-white border border-gray-100 rounded-xl overflow-hidden
+           transition-all duration-300 hover:-translate-y-1;
+    box-shadow: 0 2px 12px rgba(26,26,26,0.07);
+  }
+  .card-product:hover {
+    box-shadow: 0 8px 32px rgba(26,26,26,0.13);
+  }
+
+  .badge-discount {
+    @apply absolute top-3 left-3 text-white text-xs font-body font-bold
+           px-2.5 py-1 rounded-full z-10;
+    background: linear-gradient(135deg, #E8450A, #F5A623);
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-gray-200 text-ink placeholder-ink-faint
+           px-4 py-3 rounded-lg font-body text-sm
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10
+           transition-colors duration-200;
+  }
+
+  .nav-link {
+    @apply font-body text-sm font-medium text-ink-light hover:text-primary
+           transition-colors duration-200 relative;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #E8450A, #F5A623);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A84C, #E2C46A, #A07C2A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #FAFAFA; }
+::-webkit-scrollbar-thumb { background: #E8450A; border-radius: 3px; }
