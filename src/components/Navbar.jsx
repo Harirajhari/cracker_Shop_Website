@@ -8,6 +8,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const { itemCount } = useCart()
   const location = useLocation()
+  
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
